@@ -21,9 +21,9 @@ class History(BaseModel):
     model: ModelType
     messages: list[Message]
 
-    def add_request(self, message: str):
-        self.messages.append(Message(role=Role.user, content=message))
+    # def add_request(self, message: str):
+    #     self.messages.append(Message(role=Role.user, content=message))
     
-    def add_response(self, message: str):
-        self.messages.append(Message(role=Role.assistant, content=message))
+    # def add_response(self, message: str):
+    #     self.messages.append(Message(role=Role.assistant, content=message))
     
