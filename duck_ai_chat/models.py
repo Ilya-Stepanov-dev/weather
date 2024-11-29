@@ -12,18 +12,12 @@ class ModelType(Enum):
     Llama = "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo"
     Mixtral = "mistralai/Mixtral-8x7B-Instruct-v0.1"
 
-class Message():
+class Message(BaseModel):
     role: Role
     content: str
 
 
 class History(BaseModel):
-    model: ModelType
-    messages: list[Message]
-
-    # def add_request(self, message: str):
-    #     self.messages.append(Message(role=Role.user, content=message))
-    
-    # def add_response(self, message: str):
-    #     self.messages.append(Message(role=Role.assistant, content=message))
+    model: ModelType = ModelType.GPT4o
+    messages: list[Message] = []
     
