@@ -13,7 +13,7 @@ class AIFormatter(WeatherFormatter):
         data['sys']['sunrise'] = format_datetime(data['sys']['sunrise'])
         data['sys']['sunset'] = format_datetime(data['sys']['sunset'])
 
-        request = f"Я получил такие данные о погоде в формате JSON: \n{data}\nЧто можешь сказать о них? Дай совет как одеться. Ответь в формате дружеской беседы с братаном"
+        request = f"Я получил такие данные о погоде в формате JSON: \n{data}\nЧто можешь сказать о них? Дай совет как одеться. Ответь в формате дружеской беседы с братаном. И выведи все параметры в удобном виде."
         ai_chat = AiChat()
         await ai_chat.get_vqd()
         data = await ai_chat.send_request(message=Message(role="user", content=request))
