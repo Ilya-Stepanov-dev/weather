@@ -6,8 +6,8 @@ from models.weather import Weather
 class Displayer():
     @override
     @log_decorator
-    def display_weather(self, weather: dict | Weather):
+    def display_weather(self, data):
         raise NotImplementedError
     
-def display_weather(data: Weather, displayer: Displayer) -> None:
+def display_weather(data, displayer: Displayer) -> None:
     return displayer.display_weather(data)
